@@ -1,0 +1,138 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/img"
+public_folder: "/assets/img"
+
+locale: "pt"
+site_url: "https://cmconsigacredmais.netlify.app/"
+display_url: "https://cmconsigacredmais.netlify.app/"
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
+collections:
+  - name: "site"
+    label: "Configurações do Site"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "site"
+        label: "Geral, cores e horários"
+        file: "content/site.json"
+        format: "json"
+        fields:
+          - label: "Marca"
+            name: "brand"
+            widget: "object"
+            fields:
+              - { label: "Nome do site", name: "site_name", widget: "string" }
+              - { label: "Título da página", name: "page_title", widget: "string" }
+              - { label: "Descrição para Google e redes", name: "meta_description", widget: "text" }
+              - { label: "Domínio completo", name: "domain", widget: "string", hint: "Ex.: https://cmconsigacredmais.netlify.app/" }
+              - { label: "Logo", name: "logo", widget: "image" }
+              - { label: "Título do rodapé (HTML simples)", name: "footer_title_html", widget: "text" }
+              - { label: "Texto do rodapé", name: "footer_copy_prefix", widget: "string" }
+          - label: "Social"
+            name: "social"
+            widget: "object"
+            fields:
+              - { label: "Instagram", name: "instagram_url", widget: "string", required: false }
+          - label: "Tema"
+            name: "theme"
+            widget: "object"
+            fields:
+              - { label: "Laranja principal", name: "orange", widget: "color" }
+              - { label: "Laranja escuro", name: "orange_deep", widget: "color" }
+              - { label: "Vermelho", name: "red", widget: "color" }
+              - { label: "Fundo claro", name: "off_white", widget: "color" }
+              - { label: "Fundo de apoio", name: "light_bg", widget: "color" }
+              - { label: "Cor da borda", name: "border", widget: "color" }
+              - { label: "Texto principal", name: "text", widget: "color" }
+              - { label: "Texto secundário", name: "muted", widget: "color" }
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Animar logo ao abrir", name: "show_logo_animation", widget: "boolean", default: true }
+              - { label: "Duração da animação da logo (ms)", name: "logo_animation_ms", widget: "number", value_type: "int", min: 0, default: 900 }
+              - label: "Diferenciais"
+                name: "differentials"
+                widget: "list"
+                fields:
+                  - { label: "Ícone", name: "icon", widget: "string" }
+                  - { label: "Texto", name: "text", widget: "string" }
+          - label: "Chamada"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "Título da seção das atendentes", name: "section_title", widget: "string" }
+          - label: "Horário online/offline"
+            name: "business_hours"
+            widget: "object"
+            fields:
+              - { label: "Observação", name: "timezone_note", widget: "string", required: false }
+              - label: "Dias online"
+                name: "days_online"
+                widget: "select"
+                multiple: true
+                options:
+                  - { label: "Domingo", value: 0 }
+                  - { label: "Segunda", value: 1 }
+                  - { label: "Terça", value: 2 }
+                  - { label: "Quarta", value: 3 }
+                  - { label: "Quinta", value: 4 }
+                  - { label: "Sexta", value: 5 }
+                  - { label: "Sábado", value: 6 }
+              - { label: "Hora inicial", name: "start_hour", widget: "number", value_type: "int", min: 0, max: 23 }
+              - { label: "Hora final", name: "end_hour", widget: "number", value_type: "int", min: 0, max: 23 }
+          - label: "Rodapé"
+            name: "footer"
+            widget: "object"
+            fields:
+              - { label: "Ano dinâmico", name: "dynamic_year", widget: "boolean", default: true }
+
+  - name: "attendants"
+    label: "Atendentes"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "attendants"
+        label: "Lista de atendentes"
+        file: "content/attendants.json"
+        format: "json"
+        fields:
+          - label: "Atendentes"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.city}}"
+            fields:
+              - { label: "Nome", name: "name", widget: "string" }
+              - { label: "Cidade", name: "city", widget: "string" }
+              - { label: "Foto", name: "photo", widget: "image" }
+              - { label: "Link do WhatsApp", name: "whatsapp", widget: "string" }
+              - { label: "Texto quando online", name: "status_label_online", widget: "string", required: false }
+              - { label: "Texto quando offline", name: "status_label_offline", widget: "string", required: false }
+
+  - name: "modalidades"
+    label: "Modalidades"
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "modalidades"
+        label: "Carrossel de modalidades"
+        file: "content/modalidades.json"
+        format: "json"
+        fields:
+          - label: "Modalidades"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Descrição", name: "description", widget: "text" }

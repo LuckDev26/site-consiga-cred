@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consiga Créd Mais — Fale com uma Consultora</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --orange:      #F47C20;
+    --orange-deep: #C94E00;
+    --red:         #8B1A1A;
+    --white:       #FFFFFF;
+    --off-white:   #FFF8F3;
+    --light-bg:    #FFF3E8;
+    --border:      #FFD9B8;
+    --text:        #1C0A00;
+    --muted:       #8A6040;
+    --shadow-card: 0 4px 24px rgba(244,124,32,0.13);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--off-white);
+    font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 80px;
+    color: var(--text);
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image:
+      radial-gradient(ellipse 80% 40% at 50% -10%, rgba(244,124,32,0.18) 0%, transparent 70%),
+      radial-gradient(circle at 90% 85%, rgba(139,26,26,0.07) 0%, transparent 50%);
+    pointer-events: none; z-index: 0;
+  }
+  .container { width: 100%; max-width: 430px; position: relative; z-index: 1; }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(160deg, #C94E00 0%, #E8690A 35%, #F47C20 65%, #FF9A3C 100%);
+    padding: 44px 22px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute;
+    width: 240px; height: 240px; top: -90px; right: -70px;
+    border-radius: 50%; background: white; opacity: 0.06;
+  }
+  .hero::after {
+    content: ''; position: absolute;
+    width: 160px; height: 160px; bottom: -55px; left: -45px;
+    border-radius: 50%; background: white; opacity: 0.04;
+  }
+
+  /* Logo sem fundo — maior, com sombra */
+  .logo-wrap {
+    width: 120px; height: 120px;
+    margin: 0 auto 14px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; z-index: 1;
+    filter: drop-shadow(0 4px 18px rgba(0,0,0,0.28));
+    animation: none;
+  }
+  .logo-wrap img { width: 120px; height: 120px; object-fit: contain; }
+
+  .brand-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: rgba(255,255,255,0.78);
+    margin-bottom: 4px; position: relative; z-index: 1;
+    animation: fadeUp 0.5s 0.12s ease both;
+  }
+  .hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 27px; font-weight: 800;
+    color: white; line-height: 1.15; margin-bottom: 8px;
+    position: relative; z-index: 1;
+    text-shadow: 0 2px 14px rgba(0,0,0,0.18);
+    animation: fadeUp 0.5s 0.18s ease both;
+  }
+  .hero-sub {
+    font-size: 13px; color: rgba(255,255,255,0.88);
+    font-weight: 400; line-height: 1.5;
+    max-width: 280px; margin: 0 auto 22px;
+    position: relative; z-index: 1;
+    animation: fadeUp 0.5s 0.24s ease both;
+  }
+
+  /* ── 4 Diferenciais ── */
+  .differentials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+    position: relative; z-index: 1;
+    animation: fadeUp 0.5s 0.32s ease both;
+  }
+  .diff-item {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.26);
+    border-radius: 13px;
+    padding: 11px 10px;
+    display: flex; align-items: center; gap: 9px;
+    backdrop-filter: blur(6px);
+    text-align: left;
+  }
+  .diff-icon { font-size: 20px; flex-shrink: 0; line-height: 1; }
+  .diff-text {
+    font-size: 11px; font-weight: 700;
+    color: white; line-height: 1.35;
+  }
+
+  /* ── Wave ── */
+  .wave {
+    display: block; width: 100%; height: 30px;
+    background: var(--off-white);
+    clip-path: ellipse(55% 100% at 50% 100%);
+    margin-top: -2px;
+  }
+
+
+
+  /* ── Carousel de Modalidades ── */
+  .loan-carousel-wrap {
+    padding: 4px 16px 2px;
+    animation: fadeUp 0.5s 0.34s ease both;
+  }
+  .loan-carousel {
+    position: relative;
+    background: linear-gradient(180deg, #fffaf6 0%, #ffffff 100%);
+    border: 1.5px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow-card);
+    padding: 16px 14px 34px;
+    min-height: 108px;
+    overflow: hidden;
+  }
+  .loan-carousel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(244,124,32,0.09), transparent 36%);
+    pointer-events: none;
+  }
+  .carousel-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--orange-deep);
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  .carousel-track {
+    position: relative;
+    min-height: 50px;
+  }
+  .carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: translateX(22px);
+    transition: opacity .45s ease, transform .45s ease;
+    pointer-events: none;
+  }
+  .carousel-slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+  .carousel-slide h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .carousel-slide p {
+    font-size: 12px;
+    line-height: 1.45;
+    color: var(--muted);
+    position: relative;
+    z-index: 1;
+  }
+  .carousel-dots {
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 12px;
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    border: none;
+    background: #ffd7b4;
+    transition: all .25s ease;
+    cursor: pointer;
+  }
+  .carousel-dot.active {
+    width: 22px;
+    background: var(--orange);
+  }
+
+  /* ── CTA ── */
+  .cta-strip {
+    text-align: center; padding: 18px 24px 10px;
+    animation: fadeUp 0.5s 0.38s ease both;
+  }
+  .cta-strip p {
+    font-size: 12.5px; font-weight: 800;
+    color: var(--orange-deep); letter-spacing: 0.5px;
+    text-transform: uppercase;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .cta-strip p::before, .cta-strip p::after {
+    content: ''; flex: 1; height: 1.5px;
+    background: var(--border); max-width: 50px; border-radius: 2px;
+  }
+
+  /* ── Cards ── */
+  .cards { display: flex; flex-direction: column; gap: 11px; padding: 0 16px; }
+  .card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    padding: 13px 15px 13px 13px;
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none; color: var(--text);
+    box-shadow: var(--shadow-card);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    animation: fadeUp 0.45s ease both;
+    position: relative; overflow: hidden;
+  }
+  .card:hover { transform: translateY(-3px) scale(1.01); box-shadow: 0 10px 36px rgba(244,124,32,0.2); border-color: var(--orange); }
+  .card:active { transform: scale(0.98); }
+  .card:nth-child(1){animation-delay:.18s} .card:nth-child(2){animation-delay:.24s}
+  .card:nth-child(3){animation-delay:.30s} .card:nth-child(4){animation-delay:.36s}
+  .card:nth-child(5){animation-delay:.42s} .card:nth-child(6){animation-delay:.48s}
+  .card:nth-child(7){animation-delay:.54s}
+
+  .avatar-wrap { position: relative; flex-shrink: 0; }
+  .avatar {
+    width: 54px; height: 54px; border-radius: 50%;
+    background: var(--light-bg); border: 2.5px solid var(--orange);
+    overflow: hidden; display: flex; align-items: center; justify-content: center;
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .avatar-initials {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px; font-weight: 800; color: var(--orange);
+  }
+  .online-dot {
+    width: 11px; height: 11px; background: #22c55e;
+    border-radius: 50%; border: 2px solid white;
+    position: absolute; bottom: 2px; right: 2px;
+    animation: pulse-green 2s infinite;
+  }
+  .info { flex: 1; min-width: 0; }
+  .attendant-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px;
+  }
+  .city-badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: var(--light-bg); border: 1px solid var(--border);
+    color: var(--orange-deep); font-size: 10.5px; font-weight: 700;
+    padding: 3px 8px; border-radius: 20px;
+  }
+  .city-badge svg { width: 9px; height: 9px; }
+  .cta-label { font-size: 10.5px; color: var(--muted); font-weight: 600; margin-top: 4px; }
+
+  .wa-btn {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border-radius: 11px; padding: 8px 12px;
+    display: flex; align-items: center; gap: 5px; flex-shrink: 0;
+    box-shadow: 0 3px 12px rgba(37,211,102,0.3);
+    transition: transform 0.18s, box-shadow 0.18s;
+  }
+  .card:hover .wa-btn { transform: scale(1.07); box-shadow: 0 6px 18px rgba(37,211,102,0.4); }
+  .wa-btn svg { width: 18px; height: 18px; fill: white; flex-shrink: 0; }
+  .wa-btn span { font-size: 9.5px; font-weight: 800; color: white; line-height: 1.2; text-align: center; }
+
+  /* ── Social ── */
+  .social-section { padding: 34px 16px 0; text-align: center; animation: fadeUp 0.5s 0.6s ease both; }
+  .social-label { font-size: 10.5px; font-weight: 700; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; }
+  .socials { display: flex; justify-content: center; gap: 13px; }
+  .social-btn {
+    width: 44px; height: 44px; border-radius: 13px;
+    background: white; border: 1.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none; color: var(--orange);
+    box-shadow: 0 2px 10px rgba(244,124,32,0.1);
+    transition: all 0.2s ease;
+  }
+  .social-btn:hover { background: var(--orange); color: white; border-color: var(--orange); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(244,124,32,0.3); }
+  .social-btn svg { width: 19px; height: 19px; }
+
+  /* ── Footer ── */
+  .footer { text-align: center; padding: 26px 16px 0; animation: fadeUp 0.5s 0.65s ease both; }
+  .footer-logo-text { font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 800; margin-bottom: 5px; }
+  .footer-logo-text .c1 { color: var(--orange); }
+  .footer-logo-text .c2 { color: var(--red); }
+  .footer-copy { font-size: 11px; color: var(--muted); }
+
+  /* ── Keyframes ── */
+  @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes popIn  { from{opacity:0;transform:scale(0.6)} to{opacity:1;transform:scale(1)} }
+  @keyframes pulse-green {
+    0%,100%{box-shadow:0 0 0 2px rgba(0,0,0,0.3)}
+    50%    {box-shadow:0 0 0 5px rgba(0,0,0,0)}
+  }
+</style>
+
+<style>
+.logo-wrap-clean{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding: 12px 0 10px;
+  margin-bottom: 6px;
+}
+.logo-wrap-clean img{
+  width: 230px !important;
+  max-width: 78% !important;
+  height: auto !important;
+  display:block;
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.12));
+}
+.brand-name,.hero-title,.hero-sub{display:none !important;}
+
+.modalidades-topo{
+  text-align:center;
+  margin: 4px 0 10px;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: #d86110;
+}
+.carousel-kicker{display:none !important;}
+
+.avatar{
+  width:58px !important;
+  height:58px !important;
+  border:2px solid #f97316 !important;
+  box-shadow:0 0 0 3px #fff, 0 0 0 5px #f97316, 0 8px 18px rgba(249,115,22,0.18) !important;
+}
+.avatar img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+}
+</style>
+
+
+<style>
+/* AJUSTE FINAL DA LOGO NO TOPO */
+.logo-wrap,
+.logo-wrap.logo-wrap-clean{
+  width: 100% !important;
+  height: 150px !important;
+  margin: 0 auto 16px !important;
+  padding: 6px 18px 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  z-index: 2 !important;
+  filter: none !important;
+}
+
+.logo-wrap img,
+.logo-wrap.logo-wrap-clean img{
+  width: 92% !important;
+  max-width: 320px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  filter: brightness(0) invert(1) !important; /* branca */
+  opacity: 1 !important;
+}
+
+/* garante que não apareça nenhum texto antigo */
+.brand-name,
+.hero-title,
+.hero-sub{
+  display: none !important;
+}
+</style>
+
+
+<style>
+/* logo: animação suave e bonita */
+.logo-wrap img{
+  opacity: 0;
+  transform: translateY(12px) scale(0.985);
+  animation: logoRevealSoft 1.1s cubic-bezier(.22,.61,.36,1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes logoRevealSoft{
+  0%{
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+  }
+  65%{
+    opacity: 1;
+    transform: translateY(-1px) scale(1.01);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* bolinha online mais viva, com piscada suave */
+.online-dot{
+  animation: onlineBlink 1.35s ease-in-out infinite !important;
+  box-shadow: 0 0 0 0 rgba(0,0,0,0.55);
+}
+
+@keyframes onlineBlink{
+  0%{
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(0,0,0,0.55);
+  }
+  50%{
+    transform: scale(1.18);
+    opacity: .72;
+    box-shadow: 0 0 0 6px rgba(0,0,0,0);
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  }
+}
+</style>
+
+
+
+
+
+<style>
+/* destaque real nos cards das atendentes */
+.staff-grid a,
+.staff-grid .card,
+.attendants-grid a,
+.attendants-grid .card,
+.consultants-grid a,
+.consultants-grid .card,
+a.card {
+  border-radius: 20px !important;
+  border: 1px solid rgba(249,115,22,.22) !important;
+  background: linear-gradient(180deg,#ffffff 0%, #fff7f0 100%) !important;
+  box-shadow: 0 10px 28px rgba(15,23,42,.08) !important;
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease !important;
+}
+
+.staff-grid a:hover,
+.staff-grid .card:hover,
+.attendants-grid a:hover,
+.attendants-grid .card:hover,
+.consultants-grid a:hover,
+.consultants-grid .card:hover,
+a.card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 18px 38px rgba(249,115,22,.18) !important;
+  border-color: rgba(249,115,22,.45) !important;
+}
+
+.avatar,
+.card .avatar,
+a.card .avatar {
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+  box-shadow:
+    0 0 0 3px #fff,
+    0 0 0 6px #f97316,
+    0 12px 26px rgba(249,115,22,.24) !important;
+  transition: transform .28s ease !important;
+}
+
+.staff-grid a:hover .avatar,
+.attendants-grid a:hover .avatar,
+.consultants-grid a:hover .avatar,
+a.card:hover .avatar {
+  transform: scale(1.06) !important;
+}
+
+.avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.attendant-name,
+.consultant-name,
+.card h3,
+.card h4,
+.card strong {
+  font-weight: 800 !important;
+  font-size: 16px !important;
+  letter-spacing: .01em !important;
+}
+
+.location-badge,
+.city-badge,
+.badge {
+  background: #fff1e6 !important;
+  border: 1px solid rgba(249,115,22,.28) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.7) !important;
+}
+
+a[href*="whatsapp"],
+a[href*="wa.me"],
+a[href*="api.whatsapp.com"] {
+  box-shadow: 0 8px 18px rgba(0,0,0,.28) !important;
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease !important;
+}
+
+a[href*="whatsapp"]:hover,
+a[href*="wa.me"]:hover,
+a[href*="api.whatsapp.com"]:hover {
+  transform: translateY(-1px) scale(1.03) !important;
+  box-shadow: 0 12px 24px rgba(0,0,0,.42) !important;
+  filter: saturate(1.05) !important;
+}
+</style>
+
+
+  <meta name="description" content="Escolha a consultora mais próxima de você e faça sua simulação com condições especiais.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Consiga Créd Mais — Fale com uma Consultora">
+  <meta property="og:description" content="Escolha a consultora mais próxima de você e faça sua simulação com condições especiais.">
+  <meta property="og:url" content="https://cmconsigacredmais.netlify.app/">
+  <meta property="og:image" content="https://cmconsigacredmais.netlify.app/assets/img/logo.png">
+  <meta property="og:image:alt" content="Logo da Consiga Créd Mais">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Consiga Créd Mais — Fale com uma Consultora">
+  <meta name="twitter:description" content="Escolha a consultora mais próxima de você e faça sua simulação com condições especiais.">
+  <meta name="twitter:image" content="https://cmconsigacredmais.netlify.app/assets/img/logo.png">
+
+
+<style>
+/* CMS helpers */
+.carousel-dots {
+  position: absolute;
+  left: 50%;
+  bottom: -16px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  z-index: 6;
+}
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: none;
+  background: #ffd7b4;
+  transition: width .25s ease, background-color .25s ease, box-shadow .25s ease;
+  cursor: pointer;
+}
+.carousel-dot.active {
+  width: 24px;
+  background: linear-gradient(90deg, #f7a24b 0%, #f97316 100%);
+  box-shadow: 0 4px 12px rgba(249,115,22,.22);
+}
+.logo-wrap img.logo-animate {
+  opacity: 0;
+  transform: translateY(10px) scale(.985);
+  animation: logoRevealSoft var(--logo-animation-ms, 900ms) cubic-bezier(.22,.61,.36,1) forwards;
+}
+@keyframes logoRevealSoft {
+  0% { opacity: 0; transform: translateY(10px) scale(.985); }
+  65% { opacity: 1; transform: translateY(-1px) scale(1.01); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.online-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 2px solid white;
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+}
+.online-dot.is-online {
+  background: #22c55e;
+  animation: pulse-green 1.5s ease-in-out infinite;
+}
+.online-dot.is-offline {
+  background: #9ca3af;
+  animation: none;
+}
+</style>
+
+</head>
+<body>
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="logo-wrap logo-wrap-clean"><img src="assets/img/logo.png" alt="Consiga Cred Mais"></div>
+<div class="differentials">
+      <div class="diff-item">
+        <span class="diff-icon">🏆</span>
+        <span class="diff-text">+10 anos de mercado</span>
+      </div>
+      <div class="diff-item">
+        <span class="diff-icon">🔒</span>
+        <span class="diff-text">Segurança de verdade</span>
+      </div>
+      <div class="diff-item">
+        <span class="diff-icon">🤝</span>
+        <span class="diff-text">Transparência total</span>
+      </div>
+      <div class="diff-item">
+        <span class="diff-icon">💚</span>
+        <span class="diff-text">Milhares de sonhos realizados</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wave"></div>
+
+  <div class="loan-carousel-wrap">
+    <div class="modalidades-topo">💸 Nossas modalidades</div>
+    <div class="loan-carousel" aria-label="Modalidades de empréstimo">
+      <div class="carousel-track">
+        <div class="carousel-slide active">
+          <h3>Empréstimo no papel de luz</h3>
+          <p>Crédito com análise simples e atendimento rápido para quem busca praticidade.</p>
+        </div>
+        <div class="carousel-slide">
+          <h3>Empréstimo do limite do cartão de crédito</h3>
+          <p>Use seu limite de forma inteligente para conseguir dinheiro com mais agilidade.</p>
+        </div>
+        <div class="carousel-slide">
+          <h3>Antecipação do saque-aniversário do FGTS</h3>
+          <p>Antecipe parcelas do seu FGTS e receba o valor sem esperar os próximos anos.</p>
+        </div>
+        <div class="carousel-slide">
+          <h3>Consignado para funcionários públicos</h3>
+          <p>Parcelas facilitadas com condições pensadas para servidores públicos.</p>
+        </div>
+        <div class="carousel-slide">
+          <h3>Consignado para aposentados e pensionistas do INSS</h3>
+          <p>Taxas competitivas e atendimento especializado para beneficiários do INSS.</p>
+        </div>
+        <div class="carousel-slide">
+          <h3>Consignado para CLT</h3>
+          <p>Opção de crédito para trabalhadores com carteira assinada e condições acessíveis.</p>
+        </div>
+        <div class="carousel-slide">
+          <h3>Financiamento de veículo</h3>
+          <p>Realize o sonho do carro ou da moto com simulação prática e suporte completo.</p>
+        </div>
+        <div class="carousel-slide">
+          <h3>Portabilidade com troco</h3>
+          <p>Transfira seu contrato, reduza sua margem e ainda consiga valor extra em conta.</p>
+        </div>
+      </div>
+      <div class="carousel-dots" aria-label="Indicadores do carrossel"></div>
+    </div>
+  </div>
+
+  <div class="cta-strip"><p>👇 Escolha a consultora mais próxima de você!</p></div>
+
+  <!-- CARDS -->
+  <div class="cards">
+
+    <a href="https://api.whatsapp.com/send?phone=5588996742973&text=Fa%C3%A7a+sua+simula%C3%A7%C3%A3o+com+a+menor+taxa+de+juros+da+regi%C3%A3o%F0%9F%A4%91" target="_blank" class="card">
+      <div class="avatar-wrap"><div class="avatar"><img src="assets/img/morgganna.jpg" alt="Morgganna"></div><span class="online-dot"></span></div>
+      <div class="info">
+        <div class="attendant-name">Morgganna</div>
+        <span class="city-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>Camocim — CE</span>
+        <div class="cta-label">💬 Clique e simule agora</div>
+      </div>
+      <div class="wa-btn"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>Falar<br>Agora</span></div>
+    </a>
+
+    <a href="https://wa.me/5588993474672?text=Fa%C3%A7a%20sua%20simula%C3%A7%C3%A3o%20com%20a%20menor%20taxa%20de%20juros%20da%20regi%C3%A3o%F0%9F%A4%91" target="_blank" class="card">
+      <div class="avatar-wrap"><div class="avatar"><img src="assets/img/lucia.jpg" alt="Lúcia"></div><span class="online-dot"></span></div>
+      <div class="info">
+        <div class="attendant-name">Lúcia</div>
+        <span class="city-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>Camocim — CE</span>
+        <div class="cta-label">💬 Clique e simule agora</div>
+      </div>
+      <div class="wa-btn"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>Falar<br>Agora</span></div>
+    </a>
+
+    <a href="https://api.whatsapp.com/send?phone=5588994939250&text=Fa%C3%A7a%20sua%20simula%C3%A7%C3%A3o%20com%20a%20menor%20taxa%20de%20juros%20da%20regi%C3%A3o%F0%9F%A4%91" target="_blank" class="card">
+      <div class="avatar-wrap"><div class="avatar"><img src="assets/img/dayla.jpg" alt="Dayla"></div><span class="online-dot"></span></div>
+      <div class="info">
+        <div class="attendant-name">Dayla</div>
+        <span class="city-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>Camocim — CE</span>
+        <div class="cta-label">💬 Clique e simule agora</div>
+      </div>
+      <div class="wa-btn"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>Falar<br>Agora</span></div>
+    </a>
+
+    <a href="https://api.whatsapp.com/send?phone=5588994465383&text=Fa%C3%A7a+sua+simula%C3%A7%C3%A3o+com+a+menor+taxa+de+juros+da+regi%C3%A3o%F0%9F%A4%91" target="_blank" class="card">
+      <div class="avatar-wrap"><div class="avatar"><img src="assets/img/fernanda.jpg" alt="Fernanda"></div><span class="online-dot"></span></div>
+      <div class="info">
+        <div class="attendant-name">Fernanda</div>
+        <span class="city-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>Camocim — CE</span>
+        <div class="cta-label">💬 Clique e simule agora</div>
+      </div>
+      <div class="wa-btn"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>Falar<br>Agora</span></div>
+    </a>
+
+    <a href="https://wa.me/5588992401949?text=Fa%C3%A7a%20sua%20simula%C3%A7%C3%A3o%20com%20a%20menor%20taxa%20de%20juros%20da%20regi%C3%A3o%F0%9F%A4%91" target="_blank" class="card">
+      <div class="avatar-wrap"><div class="avatar"><img src="assets/img/maria-luiza.jpg" alt="Maria Luiza"></div><span class="online-dot"></span></div>
+      <div class="info">
+        <div class="attendant-name">Maria Luiza</div>
+        <span class="city-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>Chaval — CE</span>
+        <div class="cta-label">💬 Clique e simule agora</div>
+      </div>
+      <div class="wa-btn"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>Falar<br>Agora</span></div>
+    </a>
+
+    <a href="https://api.whatsapp.com/send?phone=5588998451540&text=Fa%C3%A7a+sua+simula%C3%A7%C3%A3o+com+a+menor+taxa+de+juros+da+regi%C3%A3o%F0%9F%A4%91" target="_blank" class="card">
+      <div class="avatar-wrap"><div class="avatar"><img src="assets/img/isabel.jpg" alt="Isabel"></div><span class="online-dot"></span></div>
+      <div class="info">
+        <div class="attendant-name">Isabel</div>
+        <span class="city-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>Granja — CE</span>
+        <div class="cta-label">💬 Clique e simule agora</div>
+      </div>
+      <div class="wa-btn"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>Falar<br>Agora</span></div>
+    </a>
+
+    <a href="https://api.whatsapp.com/send?phone=5588994502094&text=Fa%C3%A7a+sua+simula%C3%A7%C3%A3o+com+a+menor+taxa+de+juros+da+regi%C3%A3o%F0%9F%A4%91" target="_blank" class="card">
+      <div class="avatar-wrap"><div class="avatar"><img src="assets/img/camila.jpg" alt="Camila"></div><span class="online-dot"></span></div>
+      <div class="info">
+        <div class="attendant-name">Camila</div>
+        <span class="city-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>Martinópole — CE</span>
+        <div class="cta-label">💬 Clique e simule agora</div>
+      </div>
+      <div class="wa-btn"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>Falar<br>Agora</span></div>
+    </a>
+
+  </div>
+
+  <!-- SOCIAL -->
+  <div class="social-section">
+    <p class="social-label">Nossas redes sociais</p>
+    <div class="socials">
+      <a href="https://www.instagram.com/consigacredcamocim/" target="_blank" class="social-btn" title="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo-text"><span class="c1">Consiga </span><span class="c2">Créd Mais</span></div>
+    <p class="footer-copy">© <span id="currentYear"></span> · Assessoria Financeira · Correspondente Bancário</p>
+  </div>
+
+</div>
+
+
+
+
+<style>
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-container::before,
+.carousel-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 2;
+}
+
+.carousel-container::before {
+  left: 0;
+  background: linear-gradient(to right, #fff, transparent);
+}
+
+.carousel-container::after {
+  right: 0;
+  background: linear-gradient(to left, #fff, transparent);
+}
+</style>
+
+
+
+
+
+
+
+<script>
+(function () {
+  const safeFetch = (url) => fetch(url, { cache: 'no-store' }).then(r => {
+    if (!r.ok) throw new Error('Falha ao carregar ' + url);
+    return r.json();
+  });
+
+  const escapeHtml = (value = '') =>
+    String(value)
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+
+  function setMeta(attr, key, content) {
+    if (!content) return;
+    let el = document.head.querySelector(`meta[${attr}="${key}"]`);
+    if (!el) {
+      el = document.createElement('meta');
+      el.setAttribute(attr, key);
+      document.head.appendChild(el);
+    }
+    el.setAttribute('content', content);
+  }
+
+  function applyTheme(site) {
+    const root = document.documentElement;
+    const t = site.theme || {};
+    const map = {
+      '--orange': t.orange,
+      '--orange-deep': t.orange_deep,
+      '--red': t.red,
+      '--off-white': t.off_white,
+      '--light-bg': t.light_bg,
+      '--border': t.border,
+      '--text': t.text,
+      '--muted': t.muted,
+      '--logo-animation-ms': ((site.hero && site.hero.logo_animation_ms) || 900) + 'ms'
+    };
+    Object.entries(map).forEach(([k,v]) => { if (v) root.style.setProperty(k, v); });
+  }
+
+  function applyMeta(site) {
+    const brand = site.brand || {};
+    document.title = brand.page_title || document.title;
+    setMeta('name', 'description', brand.meta_description || '');
+    setMeta('property', 'og:title', brand.page_title || '');
+    setMeta('property', 'og:description', brand.meta_description || '');
+    setMeta('property', 'og:url', brand.domain || '');
+    setMeta('property', 'og:image', brand.domain ? new URL(brand.logo || 'assets/img/logo.png', brand.domain).href : '');
+    setMeta('property', 'og:image:alt', 'Logo da ' + (brand.site_name || 'empresa'));
+    setMeta('name', 'twitter:title', brand.page_title || '');
+    setMeta('name', 'twitter:description', brand.meta_description || '');
+    setMeta('name', 'twitter:image', brand.domain ? new URL(brand.logo || 'assets/img/logo.png', brand.domain).href : '');
+  }
+
+  function applyHero(site) {
+    const brand = site.brand || {};
+    const hero = site.hero || {};
+    const logo = document.querySelector('.logo-wrap img');
+    if (logo && brand.logo) {
+      logo.src = brand.logo;
+      logo.alt = brand.site_name || 'Logo';
+      logo.classList.toggle('logo-animate', !!hero.show_logo_animation);
+    }
+
+    const differentialsWrap = document.querySelector('.differentials');
+    if (differentialsWrap && Array.isArray(hero.differentials)) {
+      differentialsWrap.innerHTML = hero.differentials.map(item => `
+        <div class="diff-item">
+          <span class="diff-icon">${escapeHtml(item.icon || '')}</span>
+          <span class="diff-text">${escapeHtml(item.text || '')}</span>
+        </div>
+      `).join('');
+    }
+
+    const cta = document.querySelector('.cta-strip p');
+    if (cta && site.cta && site.cta.section_title) {
+      cta.innerHTML = `<span>✨</span>${escapeHtml(site.cta.section_title)}`;
+    }
+  }
+
+  function getOnlineStatus(site) {
+    const cfg = site.business_hours || {};
+    const day = new Date().getDay();
+    const hour = new Date().getHours();
+    const days = Array.isArray(cfg.days_online) ? cfg.days_online : [1,2,3,4,5];
+    const start = Number.isFinite(cfg.start_hour) ? cfg.start_hour : 8;
+    const end = Number.isFinite(cfg.end_hour) ? cfg.end_hour : 17;
+    return days.includes(day) && hour >= start && hour < end;
+  }
+
+  function renderAttendants(items, site) {
+    const cards = document.querySelector('.cards');
+    if (!cards || !Array.isArray(items)) return;
+    const isOnline = getOnlineStatus(site);
+    cards.innerHTML = items.map(item => `
+      <a class="card" href="${escapeHtml(item.whatsapp || '#')}" target="_blank" rel="noopener">
+        <div class="avatar-wrap">
+          <div class="avatar">
+            <img src="${escapeHtml(item.photo || '')}" alt="${escapeHtml(item.name || '')}">
+          </div>
+          <span class="online-dot ${isOnline ? 'is-online' : 'is-offline'}"></span>
+        </div>
+        <div class="info">
+          <div class="attendant-name">${escapeHtml(item.name || '')}</div>
+          <span class="city-badge">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"></path></svg>
+            ${escapeHtml(item.city || '')}
+          </span>
+          <div class="cta-label">${escapeHtml(isOnline ? (item.status_label_online || '🟢 Online agora') : (item.status_label_offline || '⚪ Offline no momento'))}</div>
+        </div>
+        <div class="wa-btn" aria-label="Falar no WhatsApp">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.79.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.693.626.711.226 1.358.194 1.87.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path></svg>
+          <span>WhatsApp</span>
+        </div>
+      </a>
+    `).join('');
+  }
+
+  function renderCarousel(items) {
+    const track = document.querySelector('.carousel-track');
+    const dotsWrap = document.querySelector('.carousel-dots');
+    if (!track || !dotsWrap || !Array.isArray(items) || !items.length) return;
+
+    track.innerHTML = items.map((item, i) => `
+      <div class="carousel-slide ${i === 0 ? 'active' : ''}">
+        <h3>${escapeHtml(item.title || '')}</h3>
+        <p>${escapeHtml(item.description || '')}</p>
+      </div>
+    `).join('');
+
+    dotsWrap.innerHTML = items.map((_, i) =>
+      `<button class="carousel-dot ${i === 0 ? 'active' : ''}" type="button" aria-label="Ir para modalidade ${i + 1}"></button>`
+    ).join('');
+
+    const slides = [...track.querySelectorAll('.carousel-slide')];
+    const dots = [...dotsWrap.querySelectorAll('.carousel-dot')];
+    let current = 0;
+    let timer;
+
+    function goTo(index) {
+      slides[current]?.classList.remove('active');
+      dots[current]?.classList.remove('active');
+      current = index;
+      slides[current]?.classList.add('active');
+      dots[current]?.classList.add('active');
+    }
+
+    function next() {
+      goTo((current + 1) % slides.length);
+    }
+
+    function restart() {
+      clearInterval(timer);
+      timer = setInterval(next, 3600);
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        goTo(index);
+        restart();
+      });
+    });
+
+    restart();
+  }
+
+  function applyFooter(site) {
+    const brand = site.brand || {};
+    const footerTitle = document.querySelector('.footer-logo-text');
+    const footerCopy = document.querySelector('.footer-copy');
+    if (footerTitle && brand.footer_title_html) footerTitle.innerHTML = brand.footer_title_html;
+    if (footerCopy) {
+      const year = new Date().getFullYear();
+      footerCopy.innerHTML = `© ${year} · ${escapeHtml(brand.footer_copy_prefix || '')}`;
+    }
+  }
+
+  Promise.all([
+    safeFetch('content/site.json'),
+    safeFetch('content/attendants.json'),
+    safeFetch('content/modalidades.json')
+  ]).then(([site, attendants, modalidades]) => {
+    applyTheme(site);
+    applyMeta(site);
+    applyHero(site);
+    renderAttendants(attendants.items || [], site);
+    renderCarousel(modalidades.items || []);
+    applyFooter(site);
+  }).catch(err => {
+    console.error(err);
+  });
+})();
+</script>
+
+</body>
+</html>

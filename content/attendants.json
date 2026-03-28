@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "name": "Morgganna",
+      "city": "Camocim — CE",
+      "photo": "assets/img/morgganna.jpg",
+      "whatsapp": "https://api.whatsapp.com/send?phone=5588996742973&text=Fa%C3%A7a+sua+simula%C3%A7%C3%A3o+com+a+menor+taxa+de+juros+da+regi%C3%A3o%F0%9F%A4%91",
+      "status_label_online": "🟢 Online agora",
+      "status_label_offline": "⚪ Offline no momento"
+    },
+    {
+      "name": "Lúcia",
+      "city": "Camocim — CE",
+      "photo": "assets/img/lucia.jpg",
+      "whatsapp": "https://wa.me/5588993474672?text=Fa%C3%A7a%20sua%20simula%C3%A7%C3%A3o%20com%20a%20menor%20taxa%20de%20juros%20da%20regi%C3%A3o%F0%9F%A4%91",
+      "status_label_online": "🟢 Online agora",
+      "status_label_offline": "⚪ Offline no momento"
+    },
+    {
+      "name": "Dayla",
+      "city": "Camocim — CE",
+      "photo": "assets/img/dayla.jpg",
+      "whatsapp": "https://api.whatsapp.com/send?phone=5588994939250&text=Fa%C3%A7a%20sua%20simula%C3%A7%C3%A3o%20com%20a%20menor%20taxa%20de%20juros%20da%20regi%C3%A3o%F0%9F%A4%91",
+      "status_label_online": "🟢 Online agora",
+      "status_label_offline": "⚪ Offline no momento"
+    },
+    {
+      "name": "Fernanda",
+      "city": "Camocim — CE",
+      "photo": "assets/img/fernanda.jpg",
+      "whatsapp": "https://api.whatsapp.com/send?phone=5588994465383&text=Fa%C3%A7a+sua+simula%C3%A7%C3%A3o+com+a+menor+taxa+de+juros+da+regi%C3%A3o%F0%9F%A4%91",
+      "status_label_online": "🟢 Online agora",
+      "status_label_offline": "⚪ Offline no momento"
+    },
+    {
+      "name": "Maria Luiza",
+      "city": "Chaval — CE",
+      "photo": "assets/img/maria-luiza.jpg",
+      "whatsapp": "https://wa.me/5588992401949?text=Fa%C3%A7a%20sua%20simula%C3%A7%C3%A3o%20com%20a%20menor%20taxa%20de%20juros%20da%20regi%C3%A3o%F0%9F%A4%91",
+      "status_label_online": "🟢 Online agora",
+      "status_label_offline": "⚪ Offline no momento"
+    },
+    {
+      "name": "Isabel",
+      "city": "Granja — CE",
+      "photo": "assets/img/isabel.jpg",
+      "whatsapp": "https://api.whatsapp.com/send?phone=5588998451540&text=Fa%C3%A7a+sua+simula%C3%A7%C3%A3o+com+a+menor+taxa+de+juros+da+regi%C3%A3o%F0%9F%A4%91",
+      "status_label_online": "🟢 Online agora",
+      "status_label_offline": "⚪ Offline no momento"
+    },
+    {
+      "name": "Camila",
+      "city": "Martinópole — CE",
+      "photo": "assets/img/camila.jpg",
+      "whatsapp": "https://api.whatsapp.com/send?phone=5588994502094&text=Fa%C3%A7a+sua+simula%C3%A7%C3%A3o+com+a+menor+taxa+de+juros+da+regi%C3%A3o%F0%9F%A4%91",
+      "status_label_online": "🟢 Online agora",
+      "status_label_offline": "⚪ Offline no momento"
+    }
+  ]
+}
