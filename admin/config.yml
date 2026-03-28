@@ -6,8 +6,8 @@ media_folder: "assets/img"
 public_folder: "/assets/img"
 
 locale: "pt"
-site_url: "https://cmconsigacredmais.netlify.app/"
-display_url: "https://cmconsigacredmais.netlify.app/"
+site_url: "https://cmconsigacred.netlify.app/"
+display_url: "https://cmconsigacred.netlify.app/"
 
 slug:
   encoding: "ascii"
